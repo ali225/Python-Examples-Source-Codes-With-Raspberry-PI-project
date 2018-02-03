@@ -1,0 +1,26 @@
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(11, GPIO.OUT)
+p = GPIO.PWM(11, 50)
+while True:
+       p.start(5)
+       p.ChangeDutyCycle(10)
+       print("led the led 10 ")
+       time.sleep(3)
+       p.ChangeDutyCycle(40)
+       print ("led the led 40")
+       time.sleep(3)
+       p.ChangeDutyCycle(80)
+       print ("led the led 80")
+       time.sleep(3)
+       p.ChangeDutyCycle(100)
+       print("led the led 100")
+       time.sleep(3)
+       p.ChangeDutyCycle(0)
+       print("led the led 0")
+       time.sleep(3)
+      # p.stop()
+      # GPIO.cleanup()
